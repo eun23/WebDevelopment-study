@@ -8,42 +8,24 @@ class Dog extends Animal {
 
 }
 
-class HouseDog extends Dog {
-
-}
-
 class Cat extends Animal {
-
-}
-
-class HouseCat extends Cat {
 
 }
 
 public class Ex1005 {
   public static void main(String[] args) {
-    Animal a = new Animal();
-    Animal ad = new Dog();
-    Animal ahd = new HouseDog();
-    Animal ac = new Cat();
-    Animal ahc = new HouseCat();
+    Animal animal = new Animal();
+    // Dog dogAnimal = (Dog) animal; - Error: ClassCastException
+    System.out.println("animal instanceof Dog: " + (animal instanceof Dog)); // false
 
-    // Dog a1 = (Dog) a; - Error: ClassCastException
-    Dog ad1 = (Dog) ad; // 자식 타입으로 강제 형변환 가능
-    System.out.println(ad1);
+    Animal animalDog = new Dog(); // 자동 형변환
+    Dog dogAnimalDog = (Dog) animalDog; // 강제 형변환
+    System.out.println("animalDog instanceof Dog: " + (animalDog instanceof Dog)); // true
 
-    // HouseDog hd = (HouseDog) ad1; - Error: ClassCastException
-    HouseDog hd1 = (HouseDog) ahd;
-    System.out.println(hd1);
+    Animal animalCat = new Cat(); // 자동 형변환
+    // Dog dogAnimalCat = (Dog) animalCat;  - Error: ClassCastException, 직접 상속관계가 아니면 형변환 불가
+    System.out.println("animalCat instanceof Dog: " + (animalCat instanceof Dog)); // false
 
-    Dog hd2 = hd1;
-
-    Dog hd3 = (Dog) ahd;
-    System.out.println(hd3);
-
-    // Cat c1 = (Cat) ad; - Error: ClassCastException
-
-    // 1. 자식에서 부모 타입 형변환 자동
-    // 2. 부모에서 자식 타입 형변환 강제(조건: 자식에서 부모 타입으로 형변환된 경우)
+    // IS-A 관계: 형변환 가능
   }
 }
