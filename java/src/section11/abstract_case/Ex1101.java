@@ -21,7 +21,18 @@ class Dog extends Animal {
   }
 
   void makeSound() {
-    System.out.println(this.name + " 멍멍");
+    System.out.println(name + " 멍멍");
+  }
+}
+
+class Cat extends Animal {
+
+  Cat(String name) {
+    super(name);
+  }
+
+  void makeSound() {
+    System.out.println(name + " 냐옹");
   }
 }
 
@@ -31,5 +42,9 @@ public class Ex1101 {
     Dog dog = new Dog("happy");
     dog.makeSound();
     dog.eat();
+
+    Cat cat = new Cat("Coco");
+    cat.makeSound();
+    cat.eat();
   }
 }
