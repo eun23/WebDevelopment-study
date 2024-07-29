@@ -1,4 +1,4 @@
-package section13.ex04_anonymous;
+package section13.ex04_anonymus;
 
 interface Greeting {
   void greet();
